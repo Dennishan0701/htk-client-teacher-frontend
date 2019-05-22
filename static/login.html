@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/sha512.js"></script>
+</head>
+<body>
+<div id="container" class="container">
+  <div id="output" class="container"></div>
+  <div id="vignette" class="overlay vignette"></div>
+</div>
+<div class="page-container">
+  <p style="display: none"><input name="old-userName" type="text"><input name="old-pwd" type="password"></p>
+  <h1>login</h1>
+  <div class="form">
+    <input type="text" class="username" maxlength="11" placeholder="用户名" autocomplete="off">
+    <input type="password" class="password" placeholder="密码" autocomplete="off">
+    <div class="error"><span>+</span></div>
+  </div>
+  <button>Sign in</button>
+</div>
+
+<!--<div id="controls" class="controls"></div>-->
+<div class="alert" style="display: none"></div>
+
+<script src="js/prefixfree.min.js"></script>
+<script src="js/dat.gui.min.js"></script>
+<script src="js/fss.min.js"></script>
+<script src="js/example.js"></script>
+
+
+  <!--<select class="rule">-->
+    <!--<option value="teacher">老师</option>-->
+    <!--<option value="student">学生</option>-->
+    <!--<option value="monitor">监课</option>-->
+    <!--<option value="cc">CC</option>-->
+    <!--<option value="cr">CR</option>-->
+    <!--<option value="ta">技术支持</option>-->
+  <!--</select>-->
+</body>
+<script>
+  if(location.host == "clteacher.onlyhi.cn" || location.host == "frontend.haiketang.net"){
+    var API = 'http://client.onlyhi.cn';
+  }else if(location.host == "frontendtest.haiketang.net"){
+    var API = 'http://clienttest.haiketang.net';
+  }else{
+    var API = 'http://clienttest.haiketang.net';
+  }
+
+
+  $(function () {
+//    $('.username').val(localStorage.getItem('username'))
+    $('button').click(function () {
+//      var rule = $('.rule').val();
+//      if(rule == 'teacher'){
+//        var url = '/client/user/login';
+//        var id = 0;
+//      }else if(rule == 'student'){
+//        var url = '/client/user/login';
+//        var id = 1;
+//      }else if(rule == 'monitor'){
+//        var url = '/client/emp/login'
+//        var id = 2;
+//      }else if(rule == 'cc'){
+//        var url = '/client/emp/login'
+//        var id = 3;
+//      }else if(rule == 'cr'){
+//        var url = '/client/emp/login'
+//        var id = 4;
+//      }else if(rule == 'ta'){
+//        var url = '/client/emp/login'
+//        var id = 5;
+//      }
+      var timestemp = new Date().getTime();
+      var url = '/client/user/login';
+      var pwd = sha512($('.username').val() + "&" + $('.password').val() + ":onlyhi");
+      pwd = sha512(pwd + timestemp);
+      $.ajax({
+        type:'post',
+        url:API + url,
+        dataType:'json',
+        data:{
+          phone:$('.username').val(),
+          loginName:$('.username').val(),
+          password:pwd,
+          deviceType:'PC',
+//          userType:$(".rule").val(),
+          userType:'teacher',
+          timestamp:timestemp,
+          deviceId:'luobinhangtest',
+        },
+        beforeSend:function () {
+          var username = $('.username').val();
+          var password = $('.password').val();
+          if(username == '') {
+            $('.form').find('.error').fadeOut('fast', function(){
+              $('.error').css('top', '27px');
+            });
+            $('.form').find('.error').fadeIn('fast', function(){
+              $('.form').parent().find('.username').focus();
+            });
+            return false;
+          }
+          if(password == '') {
+            $('.form').find('.error').fadeOut('fast', function(){
+              $('.error').css('top', '96px');
+            });
+            $('.form').find('.error').fadeIn('fast', function(){
+              $('.form').parent().find('.password').focus();
+            });
+            return false;
+          }
+          $('.error').fadeOut();
+        },
+        success:function (res) {
+          if(res.code == 0){
+            var token = res.data.token;
+            var isFirst = res.data.isFirst;
+//            var isFirst = 'true';
+//            localStorage.setItem('username',$('.username').val())
+//            sessionStorage.setItem("token", token);
+//            sessionStorage.setItem("id", id);
+//            sessionStorage.setItem("user", '阿西');
+//            sessionStorage.setItem("isFirst", 'false');
+            window.location.href = './href.html?token='+token+'&isFirst='+isFirst+'&device=web';
+          }else{
+            $(".alert").text(res.message).fadeIn()
+            setTimeout(function () {
+              $(".alert").fadeOut()
+            },2000)
+          }
+        },
+        error:function(){
+            $(".alert").fadeIn().text('请检查网络连接')
+        }
+      })
+    })
+    document.onkeyup = function (e) {
+      var code = e.charCode || e.keyCode;
+      if (code == 13) {
+        $('button').trigger('click')
+      }
+    }
+  })
+</script>
+</html>

@@ -1,0 +1,304 @@
+.free-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.free-content .free-title .free-title-main > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.free-content .free-title .free-title-main > div button {
+  color: #fff;
+  background: #dadada;
+  width: 70px;
+  padding: 0;
+  margin-left: 10px;
+  border: 1px solid #dadada;
+}
+.free-content .free-title .free-title-main > div button.active {
+  background: #5e85c8;
+  border-color: #5e85c8;
+}
+.free-content .free-title .free-title-main > div button.active:hover {
+  background: #7e9dd3;
+  border-color: #7e9dd3;
+}
+.free-content .free-title .free-title-main > div button.active:active {
+  background: #4b6aa0;
+  border-color: #4b6aa0;
+}
+.free-content .free-title .free-title-main > div button.secondaryBtn {
+  background: #fff;
+  border: 1px solid #5e85c8;
+  color: #5e85c8;
+}
+.free-content .free-title .free-title-main > div button.secondaryBtn:hover {
+  background: #5e85c8;
+  color: #fff;
+}
+.free-content .free-title .free-title-main > div button.secondaryBtn:active {
+  background: #4b6aa0;
+  border-color: #4b6aa0;
+}
+.free-content .free-main {
+  position: relative;
+  -webkit-box-flex: 5;
+  -ms-flex: 5;
+  flex: 5;
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 0 40px 20px 40px;
+  display: flex;
+}
+.free-content .free-main .free-date {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 110px;
+  z-index: 1;
+}
+.free-content .free-main .free-date .free-date-month {
+  position: relative;
+  cursor: pointer;
+}
+.free-content .free-main .free-date .free-date-month.disable {
+  cursor: not-allowed;
+  opacity: .5;
+}
+.free-content .free-main .free-date .free-date-month.disable:after {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 1px;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background: #73676b;
+  opacity: .5;
+}
+.free-content .free-main .free-date .free-date-month p {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  display: flex;
+}
+.free-content .free-main .free-date .free-date-month p:after {
+  content: '';
+  display: block;
+  vertical-align: middle;
+  background: url("../assets/teacher/arrow-right.png") no-repeat center;
+  width: 30px;
+  height: 30px;
+  margin: 5px 0;
+  transition: all .3s;
+}
+.free-content .free-main .free-date .free-date-month ul {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s;
+}
+.free-content .free-main .free-date .free-date-month ul li {
+  line-height: 30px;
+  transition: color .3s;
+  padding-left: 18px;
+  position: relative;
+}
+.free-content .free-main .free-date .free-date-month ul li .ivu-icon-checkmark-round {
+  position: absolute;
+  color: #919aab;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  font-size: 10px;
+}
+.free-content .free-main .free-date .free-date-month ul li span {
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  color: #919aab;
+}
+.free-content .free-main .free-date .free-date-month ul li span:after {
+  content: '';
+  width: 0;
+  height: 1px;
+  background: #623db6;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+.free-content .free-main .free-date .free-date-month.active p {
+  color: #323741;
+}
+.free-content .free-main .free-date .free-date-month.active p:after {
+  transform: rotate(90deg);
+}
+.free-content .free-main .free-date .free-date-month.active ul {
+  height: 180px;
+}
+.free-content .free-main .free-date .free-date-month.active ul li.active span {
+  color: #623db6;
+}
+.free-content .free-main .free-date .free-date-month.active ul li.active span:before {
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-left: 5px solid #623db6;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+.free-content .free-main .free-date .free-date-month.active ul li.active span:after {
+  width: 53px;
+}
+.free-content .free-main .free-table {
+  padding-left: 120px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.free-content .free-main .free-table .card {
+  flex: 5;
+  overflow: hidden;
+  background: #fff !important;
+  border: 1px solid #ecf4f7;
+  display: flex;
+}
+.free-content .free-main .free-table .card .free-table-main {
+  flex: 5;
+  position: relative;
+  z-index: 1;
+  display: flex;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header table {
+  width: 100%;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header table th {
+  font-weight: normal;
+  height: 43px;
+  background: #ebf6fb;
+  font-size: 12px;
+  border-right: 1px solid #dfebf1;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header table th:last-child {
+  border: 0;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header table th div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 43px;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header table th div.disable {
+  cursor: not-allowed;
+  opacity: .2;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header table th div .free-table-checkbox {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  font-size: 10px;
+  line-height: 15px;
+  border: 1px solid #727a89;
+  cursor: pointer;
+  overflow: hidden;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header table th div .free-table-checkbox.selected {
+  border-color: #5e85c8;
+  background: #5e85c8;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-header table th div .free-table-checkbox.selected:after {
+  content: "\F3FD";
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Ionicons;
+  font-size: 20px;
+  line-height: 13px;
+  background: #5e85c8;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 43px;
+  flex: 5;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table {
+  width: 100%;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table tr:nth-of-type(even) td {
+  background: #ebf6fb;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table td {
+  text-align: center;
+  border-right: 1px solid #dfebf1;
+  background: #f7fbfd;
+  position: relative;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table td:last-child {
+  border: 0;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table td em {
+  opacity: 0;
+  display: block;
+  min-height: 33px;
+  color: #fff;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table td span {
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table td span.selected {
+  background: #bcddec;
+  border: 1px solid #fff;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table td span.disable {
+  cursor: not-allowed;
+  opacity: .5;
+}
+.free-content .free-main .free-table .card .free-table-main .free-table-detail table td span i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 16px;
+  transform: translate3d(-50%, -50%, 0);
+}
+.free-content .free-main .free-table .free-tip {
+  color: #b5bdcb;
+  font-size: 12px;
+  text-align: right;
+  margin-top: 10px;
+}
+.freeTimeMoudel {
+  padding: 20px 0;
+  text-align: center;
+}

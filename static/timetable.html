@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>嗨课堂 - 课程表</title>
+  <link rel="stylesheet" href="css/fullcalendar.min.css">
+  <link rel="stylesheet" href="css/flatly.css">
+  <link rel="stylesheet" href="css/timetable.css">
+  <script src="js/moment.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/fullcalendar.min.js"></script>
+  <script src="js/locale-all.js"></script>
+  <script src="js/timetable.js"></script>
+
+  <style>
+
+
+    #calendar {
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+    .tip{
+      max-width: 1200px;
+      margin: 10px auto;
+    }
+    .tip div{
+      display: inline-block;
+    }
+    .tip div span{
+      display: inline-block;
+      width: 120px;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle;
+    }
+    .tip .freeTime{
+      background: rgb(45, 140, 240);
+      width: 50px;
+      margin-left: 10px;
+    }
+    .tip .classTime{
+      background: rgb(25, 190, 107);
+      width: 50px;
+      margin-left: 10px;
+    }
+    .tip .todayTime{
+      background: #dddee1;
+      width: 50px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="calendar"></div>
+<div class="tip">
+  <div>
+    <span class="freeTime"></span>
+    <span>空闲时间</span>
+  </div>
+  <div>
+    <span class="classTime"></span>
+    <span>课程安排</span>
+  </div>
+  <div>
+    <span class="todayTime"></span>
+    <span>今天</span>
+  </div>
+</div>
+</body>
+</html>
+

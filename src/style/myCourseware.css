@@ -1,0 +1,394 @@
+.myCourseware-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .ivu-input {
+  height: 26px;
+  padding-left: 26px;
+  padding-right: 5px;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .ivu-input-icon {
+  height: 26px;
+  line-height: 26px;
+  left: 0;
+  width: 26px;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button button {
+  margin-left: 10px;
+  line-height: 24px;
+  padding: 0;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .ivu-upload {
+  display: inline-block;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .downloadBtn {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-left: 10px;
+  position: relative;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .downloadBtn .icon {
+  font-size: 20px;
+  line-height: 26px;
+  color: #5e85c8;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .downloadBtn .icon:hover {
+  color: #7e9dd3;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .downloadBtn .icon:active {
+  color: #4b6aa0;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .downloadBtn.noHave .icon {
+  color: #dadada;
+  cursor: not-allowed;
+}
+.myCourseware-content .myCourseware-title .myCourseware-title-button .downloadBtn span {
+  position: absolute;
+  height: 16px;
+  line-height: 16px;
+  width: 16px;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  top: -7px;
+  right: -7px;
+  background: #fc5c41;
+  border-radius: 50%;
+}
+.myCourseware-content .myCourseware-main {
+  flex: 5;
+  display: flex;
+  position: relative;
+  padding: 30px 40px;
+  overflow: hidden;
+}
+.myCourseware-content .myCourseware-main .card {
+  width: 100%;
+  display: flex;
+}
+.myCourseware-content .myCourseware-main .card .table {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+.myCourseware-content .myCourseware-main .card .table .table-title {
+  height: 50px;
+  background-color: #f4f4f4;
+  display: flex;
+  line-height: 50px;
+  font-size: 14px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-title .table-title-filename {
+  width: 75%;
+  padding-left: 128px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-title .table-title-time {
+  width: 25%;
+  text-align: center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main {
+  overflow-y: auto;
+  flex: 5;
+  background-color: #fff;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .newFolder .ivu-input-wrapper,
+.myCourseware-content .myCourseware-main .card .table .table-main .item-title .ivu-input-wrapper {
+  display: block;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .newFolder input,
+.myCourseware-content .myCourseware-main .card .table .table-main .item-title input {
+  height: 28px;
+  border-radius: 0;
+  display: block;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item {
+  display: flex;
+  flex-direction: column;
+  padding: 1px 0;
+  border-bottom: 1px solid #eff3f9;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item.folder-list .item-file {
+  display: none;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-folder {
+  display: flex;
+  font-size: 14px;
+  line-height: 42px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-folder:hover {
+  background-color: rgba(94, 133, 200, 0.15);
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-file {
+  display: flex;
+  padding: 1px 0;
+  font-size: 14px;
+  line-height: 42px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-file:hover {
+  background-color: rgba(94, 133, 200, 0.15);
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail {
+  width: 75%;
+  padding: 0 24px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title {
+  padding: 7px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 5;
+  width: 75%;
+  cursor: pointer;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-arrow {
+  border-left: 8px solid #c5c5c5;
+  border-bottom: 6px solid transparent;
+  border-top: 6px solid transparent;
+  width: 0;
+  height: 0;
+  display: block;
+  margin-top: 8px;
+  margin-right: 15px;
+  transition: transform .2s;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type {
+  height: 22px;
+  margin-top: 3px;
+  margin-right: 11px;
+  width: 23px;
+  display: block;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.folder {
+  background: url("../assets/teacher/courseware/folder.png") no-repeat center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.ppt,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.pptx {
+  background: url("../assets/teacher/courseware/ppt.png") no-repeat center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.pdf {
+  background: url("../assets/teacher/courseware/PDF.png") no-repeat center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.doc,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.docx {
+  background: url("../assets/teacher/courseware/word.png") no-repeat center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.jpg,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.jpeg,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title .item-type.png {
+  background: url("../assets/teacher/courseware/img.png") no-repeat center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-title p {
+  flex: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 28px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading {
+  padding: 7px 0;
+  display: flex;
+  width: 25%;
+  flex-direction: row-reverse;
+  height: 42px;
+  overflow: hidden;
+  min-width: 140px;
+  line-height: 28px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button .ivu-progress-show-info .ivu-progress-outer,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading .ivu-progress-show-info .ivu-progress-outer,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error .ivu-progress-show-info .ivu-progress-outer,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading .ivu-progress-show-info .ivu-progress-outer {
+  padding-right: 35px;
+  margin-right: -35px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button i,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading i,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error i,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading i,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button a,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading a,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error a,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading a {
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  margin-left: 20px;
+  transition: transform .1s;
+  position: relative;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button i:last-child,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading i:last-child,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error i:last-child,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading i:last-child,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button a:last-child,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading a:last-child,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error a:last-child,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading a:last-child {
+  margin-left: 0;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button i:active,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading i:active,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error i:active,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading i:active,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button a:active,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading a:active,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error a:active,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading a:active {
+  transform: scale(0.95);
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button i:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading i:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error i:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading i:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button a:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading a:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error a:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading a:hover {
+  color: #5e85c8;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button .item-rename,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading .item-rename,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error .item-rename,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading .item-rename {
+  background: url("../assets/teacher/courseware/rename1.png") no-repeat center;
+  height: 28px;
+  width: 16px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button .item-rename:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading .item-rename:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error .item-rename:hover,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading .item-rename:hover {
+  background: url("../assets/teacher/courseware/rename2.png") no-repeat center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button .item-preview,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading .item-preview,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error .item-preview,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading .item-preview,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button .item-download,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading .item-download,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error .item-download,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading .item-download,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-button .item-remove,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading .item-remove,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error .item-remove,
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-uploading .item-remove {
+  font-size: 21px;
+  margin-top: 2px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-error span {
+  color: #da7194;
+  background: url("../assets/teacher/courseware/error2.png") no-repeat left center;
+  padding-left: 16px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading span {
+  color: #5e85c8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-detail .item-loading span i {
+  cursor: auto;
+  margin-right: 5px;
+  animation: turn 1s linear infinite;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-time {
+  width: 25%;
+  text-align: center;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item .item-null {
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  display: none;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item.open {
+  padding-bottom: 12px;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item.open .item-folder {
+  background-color: #5e85c8;
+  color: #fff;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item.open .item-folder .item-arrow {
+  transform: rotate(90deg);
+  border-left: 8px solid #fff !important;
+  transform-origin: 50%;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item.open .item-folder .item-rename {
+  background: url("../assets/teacher/courseware/rename3.png") no-repeat center !important;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item.open .item-folder .item-delete {
+  color: #fff !important;
+}
+.myCourseware-content .myCourseware-main .card .table .table-main .item.open .item-null,
+.myCourseware-content .myCourseware-main .card .table .table-main .item.open .item-file {
+  display: flex;
+}
+.coursewareWindowContent .ivu-modal-body {
+  padding: 5px 0 !important;
+}
+.coursewareWindowContent .ivu-modal-body .moveMain {
+  height: 280px;
+  overflow-y: auto;
+  line-height: 34px;
+}
+.coursewareWindowContent .ivu-modal-body .moveMain li {
+  padding-left: 53px;
+  padding-right: 10px;
+  margin: 1px 0;
+  cursor: pointer;
+  background: url("../assets/teacher/courseware/folder.png") no-repeat 20px center;
+}
+.coursewareWindowContent .ivu-modal-body .moveMain li:hover {
+  background-color: rgba(94, 133, 200, 0.15);
+}
+.coursewareWindowContent .ivu-modal-body .moveMain li.select {
+  background-color: #5e85c8;
+  color: #fff;
+}
+.coursewareWindowContent .deleteMain {
+  text-align: center;
+  padding: 30px 0;
+}
+.previewWarpper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+.previewContent {
+  width: 100%;
+  height: 100%;
+}
+.coursewareImgClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 15px;
+  height: 15px;
+  background: url(../assets/images/close2.png) no-repeat center;
+  background-size: cover;
+  z-index: 22;
+  cursor: pointer;
+}
+@keyframes turn {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

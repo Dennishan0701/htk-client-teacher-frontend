@@ -1,0 +1,206 @@
+@import "../my-theme/info.less";
+.openContainer{
+  .card:before,.card:after{
+    z-index: -1;
+  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .commonTitleMain{
+    h2{
+      span{
+        line-height: 35px;
+        color: #939aa9;
+        font-size: 12px;
+        margin-left:8px;
+        vertical-align: 2px;
+      }
+    }
+  }
+  .cwBody{
+    padding-left: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    .studentList{
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        li{
+          width: 217px;
+          height: 82px;
+          position: relative;
+          margin: 24px 24px 30px 0px;
+          padding:0 15px 0 9px ;
+          border-top-left-radius: 0px !important;
+          border-bottom-left-radius: 0px !important;
+          background-color: #ecf3fc;
+          //overflow: hidden;
+          div.courseMain{
+            display: flex;
+            justify-content: space-between;
+            div.courseDetail{
+              &>div:first-child{
+                padding: 20px 0 10px 0;
+                font-size: 14px;
+                line-height: 14px;
+                color:@mid-gray-color;
+                span:nth-child(2){
+                  margin-left:10px;
+                }
+                div.detail{
+                  display: inline-block;
+                  font-size: 12px;
+                  color:#623fb7;
+                  cursor:pointer;
+                }
+              }
+              &>p:nth-child(2){
+                color:@mid-gray-color;
+                font-size: 14px;
+                line-height: 14px;
+                span:nth-child(2){
+                  margin-left:10px;
+                }
+              }
+            }
+            div.enterRoom{
+              .enterClass{
+                width: 54px;
+                height:24px;
+                border-radius:4px;
+                background-color:@primary-color ;
+                color:#fff;
+                font-size:12px;
+                line-height: 24px;
+                text-align: center;
+                margin: 30px auto 0;
+                cursor:pointer;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+//  openTip提醒
+  .openTip{
+    width: 180px;
+    height: 106px;
+    line-height: 106px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+//弹窗样式要新加类名，它是在body下
+.openClass{
+  .ivu-modal-content {
+    overflow: visible!important;
+  }
+  .ivu-modal .ivu-modal-content .ivu-modal-header {
+    overflow: hidden;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  form{
+    margin-top: 15px;
+    .ivu-form-item-label{
+      font-size: 14px!important;
+      color: @mid-gray-color!important;
+      padding: 10px 0!important;
+      text-align: left!important;
+    }
+    .ivu-form-item-required .ivu-form-item-label:before{
+      content:'';
+      margin-right: 0;
+    }
+    .ivu-form-item-content{
+      line-height: 26px;
+    }
+    .ivu-date-picker {
+      width: 196px;
+    }
+    .ivu-form-item {
+      margin-bottom: 30px;
+    }
+    .ivu-select-single .ivu-select-selection{
+      height: 34px;
+    }
+    .ivu-select-single .ivu-select-selection .ivu-select-placeholder{
+      height: 34px;
+      line-height: 34px;
+    }
+    .ivu-input {
+      height: 34px;
+      line-height: 34px;
+    }
+    .ivu-form-item:last-child{
+      margin-top:-8px;
+    }
+    //.ivu-radio-group{
+    //  //margin-top: -11px;
+    //  line-height: 12px;
+    //  .ivu-radio-wrapper{
+    //    line-height: 12px;
+    //  }
+    //}
+    .ivu-radio-wrapper{
+      color: #505151;
+      margin-right: 12px;
+    }
+    .ivu-radio-wrapper:last-child{
+      margin-right: 0px;
+    }
+    //radio选中状态
+    .ivu-radio-checked .ivu-radio-inner:after {
+      opacity: 0;
+      transform: none;
+      content: none;
+    }
+    .ivu-radio{
+      margin-right: 0;
+    }
+    .ivu-radio-checked .ivu-radio-inner{
+      background: url(../assets/teacher/check.png) no-repeat center;
+      transition: none;
+    }
+    .ivu-radio-focus{
+      box-shadow: none;
+    }
+    .ivu-radio-wrapper-checked{
+      color: @primary-color;
+    }
+    .submit{
+      width: 143px;
+      height: 34px;
+      text-align: center;
+      color:#fff;
+      font-size: 12px;
+      border-radius: 3px;
+      margin: 0 auto;
+      display: block;
+    }
+    .submit[disabled] {
+      background-color: @btn-disable-color !important;
+    }
+    .submit.active{
+      color: transparent;
+      background: @primary-color url(../assets/images/load.gif) no-repeat center !important;
+    }
+    .ivu-modal-footer{
+      padding: 0;
+    }
+  }
+}
+
+

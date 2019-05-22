@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>预览</title>
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+  <script src="js/swiper-3.4.2.min.js"></script>
+  <script src="js/jquery.js"></script>
+
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    body,html{
+      height: 100%;
+      overflow: hidden;
+    }
+    .swiper-pagination-bullet-active{
+      background: #F42440;
+    }
+    .swiper-button-next{background-image:url("images/arrowRight.png");}
+    /*改变了颜色和加粗的样式*/
+    .swiper-button-prev{background-image:url("images/arrowLeft.png");}
+    .swiper-slide{
+      position: relative;
+    }
+    .swiper-slide img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .gallery-top {
+      height: 82%;
+      width: 80%;
+    }
+    .gallery-thumbs {
+      height: 18%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+    .gallery-thumbs .swiper-slide {
+      width: 20%;
+      height: 100%;
+      opacity: 0.8;
+    }
+    .gallery-thumbs .swiper-slide-active {
+      opacity: 1;
+    }
+    .coursewareImgClose{
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+      background: url("images/close-circled.png") no-repeat center;
+      background-size: cover;
+      z-index: 999;
+      cursor: pointer;
+    }
+    .coursewareImgBg{
+      background: rgba(0,0,0,0.5);
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+    }
+    .coursewareImgWarpper{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .courserwareImgMain{
+      position: absolute;
+      width: 80%;
+      height: 100%;
+      left: 10%;
+      top: 0;
+    }
+    .loading{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      /*opacity: 0.7;*/
+      background: #fff;
+      z-index: 899;
+    }
+    .loading-main{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      -o-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+    }
+    .loading-img{
+      background:#fff url("images/loading8.gif") no-repeat center;
+      background-size: 150px 150px;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+    }
+    .loading-progress{
+      font-size: 24px;
+      text-align: center;
+      color: skyblue;
+    }
+    .loading-tip{
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+      color: skyblue;
+      font-weight: bold;
+    }
+    .swiper-main{
+      height: 100%;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .swiper-main span{
+      position: absolute;
+      right: 0;
+      top: -22px;
+    }
+    .swiperImg{
+      position: relative;
+    }
+    .swiper2Main i{
+      width: 22px;
+      color: #fff;
+      font-style: normal;
+      position: absolute;
+      left: -24px;
+      top: 0;
+      text-align: right;
+      font-size: 10px;
+    }
+    .swiperButton{
+      position: absolute;
+      right: -40px;
+      bottom:0;
+      height: 20%;
+      width: 30px;
+    }
+    .swiper-button-next, .swiper-button-prev{
+      width: 30px;
+      height: 16px;
+      background-size: 100%;
+      margin: 0;
+      left: auto;
+      right: auto;
+      top: 50%;
+      bottom:auto;
+      outline: none;
+    }
+    .swiper-button-next{
+      margin-top: 20px;
+    }
+    .swiper-button-prev{
+      margin-top: -20px;
+     }
+
+  </style>
+</head>
+<body>
+<div class="coursewareImgWarpper">
+  <div class="loading">
+    <div class="loading-main">
+      <div class="loading-img"></div>
+      <!--<div class="loading-progress">0%</div>-->
+      <!--<div class="loading-tip"></div>-->
+    </div>
+  </div>
+  <!--<div class="coursewareImgClose"></div>-->
+  <div class="coursewareImgBg">
+    <div class="courserwareImgMain">
+      <div class="swiperButton">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r!=null) return (r[2]); return null;
+  };
+
+  if(location.host == "clteacher.onlyhi.cn" || location.host == "clstudent.onlyhi.cn"){
+    var API = 'http://client.onlyhi.cn';
+  }else if(location.host == "frontendtest.haiketang.net"){
+    var API = 'http://clienttest.haiketang.net';
+  }else if(location.host == "localhost:8086" || location.host == "172.16.20.98:8086"){
+    var API = 'http://clienttest.haiketang.net';
+  }else{
+    var API = 'http://clienttest.haiketang.net';
+  }
+
+
+  var token = GetQueryString('token');
+  var uuid = GetQueryString('uuid');
+  var tipArr = [
+    '我已经很拼命在加载了',
+    '再等等，马上就好啦!',
+    '心急吃不了热豆腐，淡定!',
+    '加油加油，我对自己说!',
+    '小明从一楼上到六楼做功散发的热量是Q，求小明QQ是多少',
+    '小明种了一棵树，求树的节点个数',
+    '小明买东西攒积分，求积分上下限',
+    '小明很生气，求生成气体体积',
+    '小明和小红去唱k，求k的取值范围',
+    '小明被打后留下了心理阴影，求阴影部分面积',
+    '耐心一点哦',
+    '这句话有10万分之1的几率可以看到，如果你看到了证明你被骗了',
+  ];
+  var random = Math.floor(Math.random()*tipArr.length);
+  $.ajax({
+    type:'post',
+    dataType:'json',
+    url: API +'/client/courseware/iosGetCoursewareImageList ',
+    header:{
+      "token":token,
+    },
+    data:JSON.stringify({
+      "token":token,
+      "coursewareUuid":uuid,
+    }),
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('Content-Type','application/json');
+    },
+    success:function(res){
+      if(res.code==0){
+        var swiperMain='',swiper2Main='',swiperContent;
+        var coursewareImg = res.data;
+        var imgHeight = $(window).height() * 0.8 - 40 + 'px';
+        var imgHeight2 = $(window).height() * 0.18 + 'px';
+        for(var i = 0;i<coursewareImg.length;i++){
+          swiperMain += '<div class="swiper-slide">' +
+                          '<div class="swiper-main">' +
+                            '<div class="swiperImg">' +
+                              '<span>'+ (i+1) + '/' + (coursewareImg.length) +'</span>'+
+                              '<img src="'+ coursewareImg[i].imageUrl +'" style="max-height:'+ imgHeight +'">' +
+                            '</div>' +
+                          '</div>'+
+                        '</div>';
+          swiper2Main += '<div class="swiper-slide">' +
+              '<div class="swiper2Main swiper-main">' +
+                '<div class="swiperImg">' +
+                  '<i>'+(i+1)+'</i>'+
+                  '<img src="'+ coursewareImg[i].imageUrl +'" style="max-height:'+ imgHeight2 +'">' +
+                '</div>'+
+              '</div>'+
+            '</div>';
+        }
+        swiperContent ='<div class="swiper-container gallery-top">' +
+                          '<div class="swiper-wrapper">'+swiperMain+'</div>' +
+                        '</div>' +
+                        '<div class="swiper-container gallery-thumbs">' +
+                            '<div class="swiper-wrapper">'+swiper2Main+'</div> ' +
+                        '</div>';
+        $(".courserwareImgMain").append(swiperContent);
+        $('.loading').fadeOut();
+        swiperStart();
+//        var temp = 0;
+//        $(".loading-tip").text(tipArr[random]);
+//        $('.swiperImg').each(function() {
+//          $(this).load(function(){
+//            temp++;
+//            var progress = Math.min(parseInt((temp/(coursewareImg.length*2))*100),100)+'%';
+//            $(".loading-progress").text(progress);
+//            console.log(temp,coursewareImg.length)
+//            if(temp == coursewareImg.length*2){
+//              $('.loading').fadeOut();
+//              swiperStart();
+//            }
+//          });
+//        });
+
+
+      }
+
+    }
+  })
+
+ function swiperStart(){
+
+   var galleryTop = new Swiper('.gallery-top', {
+     navigation: {
+       nextEl: '.swiper-button-next',
+       prevEl: '.swiper-button-prev',
+     },
+     mousewheel: true,
+   });
+   var galleryThumbs = new Swiper('.gallery-thumbs', {
+     spaceBetween: 20,
+     centeredSlides: true,
+     slidesPerView: 5,
+     touchRatio: 0.2,
+     slideToClickedSlide: true,
+   });
+   galleryTop.controller.control = galleryThumbs;
+   galleryThumbs.controller.control = galleryTop;
+
+
+ }
+</script>
+</body>
+</html>

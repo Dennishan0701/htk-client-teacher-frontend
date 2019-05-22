@@ -1,0 +1,211 @@
+.cwContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cwContainer .commonTitleMain h2 span {
+  line-height: 35px;
+  color: #939aa9;
+  font-size: 12px;
+  margin-left: 8px;
+  vertical-align: 2px;
+}
+.cwContainer .commonTitleMain p {
+  width: 70px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  background-color: #5e85c8;
+  border-radius: 2px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.cwContainer .commonTitleMain p a {
+  display: block;
+}
+.cwContainer .cwBody {
+  padding-left: 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+.cwContainer .cwBody .courseList .cwDate {
+  color: #323741;
+  font-size: 14px;
+  padding: 20px 0 0 15px;
+}
+.cwContainer .cwBody .courseList .cwDate span {
+  margin-left: 8px;
+}
+.cwContainer .cwBody .courseList ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cwContainer .cwBody .courseList ul li {
+  width: 293px;
+  height: 96px;
+  position: relative;
+  margin: 15px 14px 30px 14px;
+  padding: 0 10px 0 20px;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain {
+  display: flex;
+  height: 96px;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail {
+  width: 188px;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > div:first-child {
+  padding: 20px 0 10px 0;
+  font-size: 14px;
+  color: #323741;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > div:first-child span:nth-child(2) {
+  margin: 0 6px;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > div:first-child div.detail {
+  display: inline-block;
+  font-size: 12px;
+  color: #623fb7;
+  cursor: pointer;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > div:first-child div.detail div.studyInfo .triangleUp2 {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 38px;
+  right: 113px;
+  border-style: solid;
+  border-width: 0 20px 16px;
+  border-color: transparent transparent #f0f0f0 transparent;
+  z-index: 2;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > div:first-child div.detail div.studyInfo .triangleUp3 {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 39px;
+  right: 106px;
+  border-style: solid;
+  border-width: 0px 21px 17px;
+  border-color: transparent transparent #ffffff;
+  z-index: 3;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > div:first-child div.detail div.studyInfo .courseTip {
+  min-width: 170px;
+  max-width: 310px;
+  /* height: 180px; */
+  background-color: #fff;
+  padding: 10px 12px;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+  right: 0;
+  top: 53px;
+  box-shadow: 3px 3px 7px rgba(160, 131, 137, 0.35);
+  font-size: 12px;
+  word-wrap: break-word;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > div:first-child div.detail div.studyInfo .courseTip span {
+  color: #919aab;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > p:nth-child(2) {
+  font-size: 12px;
+  display: flex;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > p:nth-child(2) span:nth-child(2) {
+  margin: 0 7px;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.courseDetail > p:nth-child(2) span {
+  max-width: 5em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.enterRoom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 5;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.enterRoom .enterClass {
+  width: 70px;
+  height: 24px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  display: block;
+  margin: 10px 0 3px;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.enterRoom .enterClass[disabled] {
+  color: #fff;
+  background-color: #dadada;
+  border-color: #dadada;
+  cursor: not-allowed;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.enterRoom .lateTime {
+  color: #da7194;
+  font-size: 12px;
+  text-align: center;
+}
+.cwContainer .cwBody .courseList ul li div.courseMain div.enterRoom .rangeTime {
+  color: #5e85c8;
+  font-size: 12px;
+  text-align: center;
+}
+.cwContainer .cwBody .courseList ul li .triangleMain {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 4px;
+  overflow: hidden;
+}
+.cwContainer .cwBody .courseList ul li .triangleMain .triangleTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 32px solid #ed9d40;
+  border-left: 32px solid transparent;
+}
+.cwContainer .cwBody .courseList ul li .testSign {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  color: #fff;
+  font-size: 12px;
+}
+.cwContainer .cwBody .courseList ul li:before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.cwContainer .cwBody .courseList ul li.evaluation {
+  background-color: #fff9fa !important;
+}
+.cwContainer .cwBody .courseList ul li.evaluation:before {
+  background-color: #ed9d40;
+}
+.cwContainer .cwBody .courseList ul li.official {
+  background-color: #f4fafd !important;
+}
+.cwContainer .cwBody .courseList ul li.official:before {
+  background-color: #86d2b1;
+}

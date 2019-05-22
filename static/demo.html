@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo</title>
+  <script src="js/html2canvas.js"></script>
+  <style>
+    canvas{
+      position: fixed;
+      left: 50%;
+      top:50%;
+      transform: translate3d(-50%,-50%,0);
+    }
+  </style>
+</head>
+<body>
+  <div id='wrap'>
+    <h1>这是一个自动的demo</h1>
+    <img src="images/errorBg.png">
+    <h1>结束end</h1>
+    <a class="down" download="" href="">下载图片 前端下载仅支持电脑</a>
+    <img src="" class="img">
+  </div>
+</body>
+<script>
+  window.onload = () =>{
+    setTimeout(function () {
+      html2canvas(document.getElementById('wrap'),{
+        width:500,
+        logging:true
+      }).then((canvas) => {
+        console.log(canvas)
+//      let e = document.createEvent("MouseEvents")
+//      e.initEvent("click", true, true);
+        let down = document.querySelector(".down");
+        let img = document.querySelector(".img");
+        down.setAttribute('href',canvas.toDataURL("image/jpg"));
+        img.setAttribute('src',canvas.toDataURL("image/jpg"));
+
+//      down.setAttribute('download',this.downloadName);
+////      down.dispatchEvent(e);
+//      document.body.appendChild(canvas);
+      });
+    },3000)
+  }
+</script>
+</html>

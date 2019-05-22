@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>嗨课堂 - 课程表</title>
+  <link rel="stylesheet" href="css/fullcalendar.min.css">
+  <link rel="stylesheet" href="css/flatly.css">
+  <link rel="stylesheet" href="css/timetable.css">
+  <script src="js/moment.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/fullcalendar.min.js"></script>
+  <script src="js/locale-all.js"></script>
+  <script src="js/free.js"></script>
+
+  <style>
+
+    #calendar {
+      max-width: 1200px;
+      margin: 40px auto;
+      min-width: 500px;
+    }
+    .tip{
+      max-width: 1200px;
+      margin: 10px auto;
+    }
+    .tip div,.tipText{
+      display: inline-block;
+    }
+    .tip div span{
+      display: inline-block;
+      padding: 0 10px;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle;
+    }
+    .tip .freeTime{
+      background: rgb(45, 140, 240);
+      width: 50px;
+      margin-left: 10px;
+    }
+    .tip .classTime{
+      background: rgb(25, 190, 107);
+      width: 50px;
+      margin-left: 10px;
+    }
+    .tip .todayTime{
+      background: #dddee1;
+      width: 50px;
+      margin-left: 10px;
+    }
+    .save{
+      float: right;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 20px;
+      white-space: nowrap;
+      cursor: pointer;
+      color: #ffffff;
+      display: inline-block;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      background-image: none;
+      border: 1px solid #798d8f;
+      height: 30px;
+      font-size: 16px;
+      font-family: inherit;
+      border-radius: 4px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: #798d8f;
+      -webkit-transition-duration: .3s;
+      -moz-transition-duration: .3s;
+      -ms-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s;
+    }
+    .save:active{
+      -webkit-transform: scale(0.95);
+      -moz-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+      -o-transform: scale(0.95);
+      transform: scale(0.95);
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="calendar"></div>
+<div class="tip">
+  <div>
+    <span class="freeTime"></span>
+    <span>空闲时间</span>
+  </div>
+  <div>
+    <span class="todayTime"></span>
+    <span>今天</span>
+  </div>
+  <p class="tipText">※切换页面当前设置的空闲时间会消失，请点击保存</p>
+  <button class="save">保存当前页面</button>
+</div>
+</body>
+</html>
+<script>
+  var a = new Formdata()
+
+  console.log(a)
+</script>
+

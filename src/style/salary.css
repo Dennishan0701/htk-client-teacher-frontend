@@ -1,0 +1,178 @@
+.salary-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.salary-content .salaryHeader h2 {
+  font-size: 18px;
+  color: #fc5c41;
+  margin-bottom: 4px;
+}
+.salary-content .salaryHeader h2 span {
+  color: #919aab;
+  font-size: 12px;
+  margin-left: 8px;
+}
+.salary-content .salaryHeader p {
+  color: #919aab;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.salary-content .salaryContainer {
+  overflow: auto;
+  padding: 20px 40px 20px 40px;
+  position: relative;
+  flex: 5;
+}
+.salary-content .salaryContainer ul {
+  position: relative;
+}
+.salary-content .salaryContainer > ul > li:first-child {
+  width: 150px;
+  overflow: hidden;
+  height: 190px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.salary-content .salaryContainer > ul > li:first-child > div {
+  overflow: hidden;
+  background-color: #f4fafd;
+  border-radius: 5px;
+  width: 150px;
+  height: 190px;
+  position: fixed !important;
+}
+.salary-content .salaryContainer > ul > li:first-child > div p.date {
+  background-color: #9276da;
+  line-height: 36px;
+  border-bottom: 1px solid #7353c3;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 12px;
+  padding-left: 0;
+  font-size: 14px;
+}
+.salary-content .salaryContainer > ul > li:first-child > div p:nth-child(2) {
+  font-size: 14px;
+  color: #fc5c41;
+}
+.salary-content .salaryContainer > ul > li:first-child > div p {
+  font-size: 12px;
+  margin-bottom: 9px;
+  padding-left: 13px;
+}
+.salary-content .salaryContainer > ul > li:nth-child(2) {
+  padding-left: 168px;
+  width: 100%;
+}
+.salary-content .salaryContainer > ul > li:nth-child(2) .card {
+  width: 100%;
+}
+.salary-content .salaryContainer .punishTitle {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0 17px 0;
+}
+.salary-content .salaryContainer .punishTitle li:first-child {
+  font-size: 14px;
+}
+.salary-content .salaryContainer .ivu-carousel-arrow.left {
+  left: -4px;
+  top: 19px;
+  background-color: transparent !important;
+  opacity: 1 !important;
+}
+.salary-content .salaryContainer .ivu-carousel-arrow.right {
+  top: 19px;
+  right: 2px;
+  background-color: transparent !important;
+  opacity: 1 !important;
+}
+.salary-content .salaryContainer .ivu-carousel-dots-inside {
+  display: none;
+}
+.salary-content .salaryContainer .ivu-table-wrapper {
+  border: none;
+}
+.salary-content .salaryContainer .ivu-table-wrapper table {
+  width: 100% !important;
+}
+.salary-content .salaryContainer .ivu-table-wrapper .ivu-table th {
+  background-color: #ebf6fb;
+  text-align: center;
+  border-right: none;
+  line-height: 43px;
+  font-size: 16px;
+  font-weight: normal;
+}
+.salary-content .salaryContainer .ivu-table-wrapper .ivu-table td {
+  height: 34px;
+  text-align: center;
+}
+.salary-content .salaryContainer .ivu-table-wrapper .ivu-table tr td:first-child {
+  border-left: 1px solid #dfebf1;
+}
+.salary-content .salaryContainer .ivu-table-wrapper .ivu-table tr td:last-child {
+  border-right: 0;
+}
+.salary-content .salaryContainer .ivu-table-wrapper .ivu-table:after {
+  z-index: 0;
+}
+.salary-content .salaryContainer .ivu-table-wrapper .ivu-table-cell {
+  padding: 0;
+}
+.salary-content .salaryContainer .ivu-table-body {
+  max-height: 331px;
+}
+.salary-content .salaryContainer .publish .ivu-table tr td:first-child {
+  font-size: 14px;
+}
+.infoBody p {
+  font-size: 14px;
+}
+.infoBody p:first-child {
+  position: relative;
+}
+.infoBody p:first-child input {
+  width: 110px;
+  height: 28px;
+  border: 1px solid #d0d0d0;
+  margin-left: 4px;
+  padding: 0 30px 0 10px;
+}
+.infoBody p:first-child span {
+  position: absolute;
+  left: 134px;
+  top: 3px;
+}
+.infoBody p:nth-child(2) {
+  padding: 16px 0 6px;
+}
+.infoBody textarea {
+  width: 318px;
+  height: 52px;
+  max-height: 52px;
+  border: 1px solid #d0d0d0;
+  padding: 7px 10px;
+  resize: none;
+  font-size: 12px;
+}
+.infoBody p:nth-child(4) {
+  text-align: right;
+  font-size: 10px;
+  margin-right: 8px;
+}
+.infoBody p.submit {
+  width: 132px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 5px;
+  background-color: #5e85c8;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}

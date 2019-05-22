@@ -1,0 +1,263 @@
+@import "../my-theme/info.less";
+.cwContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .commonTitleMain{
+    h2{
+      span{
+        line-height: 35px;
+        color: #939aa9;
+        font-size: 12px;
+        margin-left:8px;
+        vertical-align: 2px;
+      }
+    }
+    p{
+      width: 70px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      color: #fff;
+      background-color:@primary-color;
+      border-radius: 2px;
+      margin-top: 8px;
+      cursor:pointer;
+      a{
+        display: block;
+      }
+    }
+  }
+  .cwBody{
+    //padding: 0 40px;
+    padding-left: 25px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    .courseList{
+      .cwDate{
+        color:@dark-gray-color ;
+        font-size: 14px;
+        padding:20px 0 0 15px;
+        span{
+          margin-left: 8px;
+        }
+      }
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        li{
+          width: 293px;
+          height: 96px;
+          position: relative;
+          margin: 15px 14px 30px 14px;
+          padding:0 10px 0 20px;
+          border-top-left-radius: 0px !important;
+          border-bottom-left-radius: 0px !important;
+          div.courseMain{
+            display: flex;
+            height: 96px;
+            div.courseDetail{
+              width:188px;
+              //float:left;
+              &>div:first-child{
+                padding: 20px 0 10px 0;
+                font-size: 14px;
+                color:@dark-gray-color;
+                span:nth-child(2){
+                  margin:0 6px;
+                }
+                div.detail{
+                  display: inline-block;
+                  font-size: 12px;
+                  color:#623fb7;
+                  cursor:pointer;
+                  div.studyInfo{
+                    .triangleUp2 {
+                      width: 0;
+                      height: 0;
+                      position: absolute;
+                      top: 38px;
+                      right: 113px;
+                      border-style: solid;
+                      border-width: 0 20px 16px;
+                      border-color: transparent transparent #f0f0f0 transparent;
+                      z-index: 2;
+                    }
+                    .triangleUp3 {
+                      width: 0px;
+                      height: 0px;
+                      position: absolute;
+                      top: 39px;
+                      right: 106px;
+                      border-style: solid;
+                      border-width: 0px 21px 17px;
+                      border-color: transparent transparent rgb(255, 255, 255);
+                      z-index: 3;
+                    }
+                    .courseTip{
+                      min-width: 170px;
+                      max-width: 310px;
+                      /* height: 180px; */
+                      background-color: #fff;
+                      padding: 10px 12px;
+                      position: absolute;
+                      z-index: 1;
+                      border: 1px solid #f0f0f0;
+                      border-radius: 2px;
+                      right: 0;
+                      top: 53px;
+                      box-shadow: 3px 3px 7px rgba(160, 131, 137, 0.35);
+                      font-size: 12px;
+                      word-wrap: break-word;
+                      span{
+                        color:@gray-color;
+                      }
+                    }
+                  }
+                }
+              }
+              &>p:nth-child(2){
+                font-size: 12px;
+                display: flex;
+                span:nth-child(2){
+                  margin:0 7px;
+                }
+                span{
+                  max-width: 5em;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                }
+              }
+            }
+            div.enterRoom{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              flex: 5;
+              .enterClass{
+                width: 70px;
+                height:24px;
+                border-radius:4px;
+                color:#fff;
+                font-size:12px;
+                line-height: 22px;
+                text-align: center;
+                cursor:pointer;
+                padding: 0;
+                display: block;
+                margin: 10px 0 3px;
+                &[disabled]{
+                  color: #fff;
+                  background-color: @btn-disable-color;
+                  border-color: @btn-disable-color;
+                  cursor: not-allowed;
+                }
+              }
+              .lateTime{
+                color:@error-color;
+                font-size: 12px;
+                text-align: center;
+              }
+              .rangeTime{
+                color:@primary-color;
+                font-size: 12px;
+                text-align: center;
+              }
+            }
+
+          }
+          .triangleMain{
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            top: 0;
+            right: 0;
+            border-top-right-radius: 4px;
+            overflow: hidden;
+            .triangleTop{
+              position: absolute;
+              top:0;
+              right: 0;
+              width: 0;
+              height: 0;
+              border-top: 32px solid #ed9d40;
+              border-left: 32px solid transparent;
+            }
+          }
+
+          .testSign{
+            position: absolute;
+            top:2px;
+            right:3px;
+            color:#fff;
+            font-size: 12px;
+          }
+
+        }
+        li:before{
+          content:"";
+          width:4px;
+          height: 100%;
+          top:0;
+          left:0;
+          position: absolute;
+        }
+        //测评课
+        li.evaluation{
+          background-color: #fff9fa !important;
+        }
+        li.evaluation:before{
+          background-color: #ed9d40;
+        }
+        //正式课
+        li.official{
+          background-color: #f4fafd !important;
+          //span.detail,.triangleTop,.testSign{
+          //  display:none;
+          //}
+        }
+        li.official:before{
+          background-color: #86d2b1;
+        }
+      }
+    }
+  }
+}
+
+
+//@media screen and (max-width: 1365px) {
+//  .cwContainer .cwBody .courseList ul li:nth-of-type(3n){
+//    margin-right: 0;
+//  }
+//}
+//@media screen and (min-width: 1366px) and (max-width: 1439px) {
+//  .cwContainer .cwBody .courseList ul li:nth-of-type(4n){
+//    margin-right: 0;
+//  }
+//  .cwContainer .cwBody .courseList ul li{
+//    margin-right: 21px;
+//  }
+//}
+//@media screen and (min-width: 1440px) and (max-width: 1680px){
+//  .cwContainer .cwBody .courseList ul li:nth-of-type(4n){
+//    margin-right: 0;
+//  }
+//  .cwContainer .cwBody .courseList ul li{
+//    margin-right: 30px;
+//  }
+//}
+//@media screen and (min-width: 1680px) and (max-width: 1919px){
+//  .cwContainer .cwBody .courseList ul li:nth-of-type(5n){
+//    margin-right: 0;
+//  }
+//  .cwContainer .cwBody .courseList ul li{
+//    margin-right: 20px;
+//  }
+//}
+//

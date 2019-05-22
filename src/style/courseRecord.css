@@ -1,0 +1,274 @@
+.crContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.crContainer .card:before {
+  z-index: -1;
+}
+.crContainer .commonTitle .crHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.crContainer .commonTitle .crHeader p:first-child {
+  color: #fc5c41;
+  font-size: 18px;
+}
+.crContainer .commonTitle .crHeader > div:nth-child(2) {
+  display: flex;
+}
+.crContainer .commonTitle .crHeader > div:nth-child(2) > span {
+  line-height: 27px;
+}
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-select-selection,
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-input-icon,
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-input {
+  height: 27px;
+  line-height: 27px;
+}
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-select-selection .ivu-select-placeholder,
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-input-icon .ivu-select-placeholder,
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-input .ivu-select-placeholder,
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-select-selection .ivu-select-selected-value,
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-input-icon .ivu-select-selected-value,
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-input .ivu-select-selected-value {
+  height: 25px;
+  line-height: 25px;
+}
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-icon-ios-calendar-outline {
+  background: url(../assets/images/calendar.png) no-repeat center;
+}
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-icon-ios-calendar-outline:before {
+  content: "";
+}
+.crContainer .commonTitle .crHeader > div:nth-child(2) .ivu-icon-ios-close {
+  cursor: pointer ;
+}
+.crContainer .crHeader2-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  font-size: 16px;
+}
+.crContainer .crHeader2-main .crHeader2-right {
+  display: flex;
+}
+.crContainer .crHeader2-main .crHeader2-right .class-list-tip {
+  margin-right: 30px;
+  display: flex;
+}
+.crContainer .crHeader2-main .crHeader2-right .class-list-tip em {
+  position: relative;
+  padding-left: 20px;
+}
+.crContainer .crHeader2-main .crHeader2-right .class-list-tip em:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+.crContainer .crHeader2-main .crHeader2-right .class-list-tip em:nth-of-type(1):before {
+  background: #ed9d40;
+}
+.crContainer .crHeader2-main .crHeader2-right .class-list-tip em:nth-of-type(2):before {
+  background: #86d2b1;
+}
+.crContainer .crHeader2-main p.crHeader2-tab {
+  font-size: 12px;
+}
+.crContainer .crHeader2-main p.crHeader2-tab span:nth-child(2) {
+  margin: 0 28px;
+}
+.crContainer .crHeader2-main p.crHeader2-tab span {
+  position: relative;
+  padding: 0 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.crContainer .crHeader2-main p.crHeader2-tab span.active {
+  color: #5e85c8;
+}
+.crContainer .crHeader2-main p.crHeader2-tab span.active:after {
+  position: absolute;
+  content: "";
+  background-color: #5e85c8;
+  width: 100%;
+  height: 1px;
+  bottom: -4px;
+  left: 0px;
+}
+.crContainer .crBody {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0 40px;
+  flex: 5;
+}
+.crContainer .crBody .crTitle {
+  padding: 0 0 20px 0;
+  font-size: 14px;
+}
+.crContainer .crBody .courseList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.crContainer .crBody .courseList li {
+  width: 186px;
+  height: 194px;
+  margin-right: 65px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.crContainer .crBody .courseList li .courseHead {
+  height: 106px;
+  position: relative;
+}
+.crContainer .crBody .courseList li .courseHead .playVideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all ease-out 250ms;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  cursor: pointer;
+  z-index: 2;
+}
+.crContainer .crBody .courseList li .courseHead .playVideo > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -18px 0 0 -18px;
+  transform: scale(2);
+  transition: all ease-out 250ms;
+  opacity: 0;
+}
+.crContainer .crBody .courseList li .courseHead .playVideo:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.crContainer .crBody .courseList li .courseHead .playVideo:hover > img {
+  opacity: 1;
+  transform: scale(1);
+}
+.crContainer .crBody .courseList li .courseHead .notFound {
+  text-align: center;
+  color: #fff;
+  padding-top: 36px;
+  font-size: 12px;
+}
+.crContainer .crBody .courseList li .courseHead .notFound img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.crContainer .crBody .courseList li .courseHead .courseListNoVideo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #c3c8ca;
+  color: #fff;
+}
+.crContainer .crBody .courseList li .courseHead .courseListNoVideo img {
+  margin-right: 5px;
+}
+.crContainer .crBody .courseList li .evaluation {
+  border-bottom: 2px solid #ed9d40;
+}
+.crContainer .crBody .courseList li .official {
+  border-bottom: 2px solid #86d2b1;
+}
+.crContainer .crBody .courseList li .courseBody {
+  padding: 8px 0 8px 12px;
+  display: flex;
+}
+.crContainer .crBody .courseList li .courseBody div:first-child {
+  margin-right: 16px;
+}
+.crContainer .crBody .courseList li .courseBody div:last-child span {
+  margin-left: 8px;
+}
+.crContainer .crBody .courseList li .courseFooter {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.crContainer .crBody .courseList li .courseFooter span {
+  cursor: pointer;
+  width: 70px;
+  height: 24px;
+  font-size: 12px;
+  display: block;
+  margin: 0 auto;
+  line-height: 22px;
+}
+.crContainer .crBody .courseList li .courseFooter .writeFeedback {
+  border-radius: 2px;
+  border: 1px solid #da7194;
+  color: #da7194;
+}
+.crContainer .crBody .courseList li .courseFooter .writeFeedback:hover {
+  border: 1px solid #e18da9;
+  color: #e18da9;
+}
+.crContainer .crBody .courseList li .courseFooter .writeFeedback:active {
+  border: 1px solid #ae5a76;
+  color: #ae5a76;
+}
+.crContainer .crBody .courseList li .courseFooter .readFeedback {
+  color: #5e85c8;
+}
+.crContainer .crBody .courseList li .courseFooter .readFeedback:hover {
+  color: #7e9dd3;
+}
+.crContainer .crBody .courseList li .courseFooter .readFeedback:active {
+  color: #4b6aa0;
+}
+.videoWarp {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+.videoWarp .videoContain {
+  width: 59%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+.videoWarp .videoContain .videoHead {
+  height: 24px;
+  background-color: #000;
+  text-align: right;
+}
+.videoWarp .videoContain .videoHead img {
+  width: 12px;
+  height: 12px;
+  margin: 6px 5px 0 0;
+  cursor: pointer;
+}
+.videoWarp .videoContain .videoBody {
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+  padding-bottom: 54px;
+  min-height: 450px;
+}
+.videoWarp .videoContain .videoBody .videoMain {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}

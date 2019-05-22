@@ -1,0 +1,543 @@
+@import "../my-theme/info.less";
+.schedule-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .schedule-title{
+    .schedule-title-main{
+      &>div{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        ul{
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          border-radius: 4px;
+          overflow: hidden;
+          margin-left: 48px;
+          line-height: 24px;
+          height: 26px;
+          border: 1px solid @primary-color;
+          color: @primary-color;
+          li{
+            width: 70px;
+            text-align: center;
+            cursor: pointer;
+            a{
+              display: block;
+            }
+            &:first-child{
+              border-right: 1px solid @primary-color;
+            }
+            &.active{
+              background: @primary-color;
+              color: #fff;
+            }
+          }
+
+        }
+        .schedule-tip{
+          color: #8e96a5;
+          margin-top: 8px;
+          margin-right: 20px;
+          em{
+            display: inline-block;
+            position: relative;
+            padding-left: 20px;
+            &:before{
+              content: '';
+              width: 6px;
+              height: 6px;
+              position: absolute;
+              left: 9px;
+              top: 50%;
+              transform: translateY(-50%);
+              border-radius: 50%;
+            }
+            &:nth-child(1){
+              &:before{
+                background: #ed9d40;
+              }
+            }
+            &:nth-child(2){
+              &:before{
+                background: #86d2b1;
+              }
+            }
+          }
+        }
+        .icon{
+          color: #6b7a97;
+          margin-top: 4px;
+          cursor: pointer;
+          &:hover{
+            color: tint(#6b7a97,20%);
+          }
+          &:active{
+            color: shade(#6b7a97,20%);
+          }
+        }
+      }
+    }
+  }
+  .schedule-main{
+    position: relative;
+    -webkit-box-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+    margin-top: 20px;
+    overflow: hidden;
+    display: flex;
+  }
+  .schedule-date{
+    position: absolute;
+    left: 40px;
+    top: 0;
+    width: 110px;
+    z-index: 2;
+    .schedule-date-month{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: @dark-gray-color;
+      div{
+        width: 15px;
+        text-align: center;
+        cursor: pointer;
+        &:hover{
+          color: tint(@dark-gray-color,20%);
+        }
+        &:active{
+          color: shade(@dark-gray-color,20%);
+        }
+      }
+    }
+    .schedule-date-week{
+      text-align: center;
+      color: @gray-color;
+      font-size: 12px;
+      line-height: 30px;
+      cursor: pointer;
+      li{
+        transition: color .3s;
+        span{
+          position: relative;
+          &:after{
+            content: '';
+            width: 0;
+            height: 1px;
+            background: @purple-color;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            transition: width .3s;
+          }
+        }
+        &.active{
+          color: @purple-color;
+          span{
+            &:after{
+              width: 53px;
+            }
+            &:before{
+              content: '';
+              height: 0;
+              width: 0;
+              position: absolute;
+              right: -14px;
+              top: 50%;
+              transform: translateY(-50%);
+              border-left: 5px solid @purple-color;
+              border-top: 3px solid transparent;
+              border-bottom: 3px solid transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+  .schedule-table-header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #ebf6fb;
+    i{
+      height: 42px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 19px;
+      background: #deedf4;
+      z-index: 2;
+    }
+  }
+  .schedule-table-detail{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    //&::-webkit-scrollbar {
+    //  display: none;
+    //}
+  }
+  .schedule-week-main{
+    padding: 0 40px 20px 40px;
+    display: flex;
+    width: 100%;
+    .schedule-table{
+      padding-left: 120px;
+      width: 100%;
+      display: flex;
+      .card{
+        overflow: hidden;
+        background: #fff !important;
+        border: 1px solid #ecf4f7;
+        display: flex;
+        width:100%;
+        .schedule-table-main{
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+          display: flex;
+          flex: 5;
+          .ivu-table:before,.ivu-table:after{
+            display: none;
+          }
+          .ivu-table-wrapper{
+            border-radius: 4px;
+            border: none;
+          }
+          .ivu-table{
+            .ivu-table-body{
+              overflow: hidden;
+            }
+            .ivu-table-row{
+              td:last-child{
+                border-right: 0;
+                .ivu-table-cell{
+                  &:after{
+                    content: '';
+                    background: #fff;
+                    position: absolute;
+                    right: 0;
+                    bottom: -2px;
+                    height: 1px;
+                    width: 9px;
+                  }
+                }
+              }
+              td:first-child{
+                .ivu-table-cell{
+                  &:after{
+                    content: '';
+                    background: #fff;
+                    position: absolute;
+                    left: 0;
+                    bottom: -2px;
+                    height: 1px;
+                    width: 9px;
+                  }
+                }
+              }
+            }
+            .ivu-table-row:last-child{
+              td{
+                &:after{
+                  display: none;
+                }
+              }
+            }
+            th,td{
+              border-color: #dfebf1;
+            }
+            th{
+              height: 42px;
+              text-align: center;
+              font-size: 12px;
+              font-weight: normal;
+              border-bottom: none;
+              background: #ebf6fb;
+              &:nth-of-type(even){
+                background: #deedf4;
+              }
+            }
+            td{
+              height: 45px;
+              border-bottom: none;
+              position: relative;
+              &:after{
+                height: 1px;
+                width: 100%;
+                content: '';
+                background: #e9eaec;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+              .ivu-table-cell{
+                height: 100%;
+                position: relative;
+                overflow: visible;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h3{
+                  font-size: 12px;
+                }
+              }
+              .item{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                color: #fff;
+                padding: 2px 2px 3px;
+                z-index: 3;
+                &>div {
+                  background: #86d2b1;
+                  border-radius: 3px;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+                }
+                &.yellow{
+                  &>div{
+                    background: #f6a648;
+                  }
+                }
+                &.open{
+                  transition: all .3s;
+                  .itemName{
+                    display: none;
+                  }
+                  &:hover{
+                    height: 80px!important;
+                    z-index: 4;
+                    &>div{
+                      box-shadow: 0 0 20px rgba(255,255,255,.8);
+                    }
+                    .itemName{
+                      display: block;
+                    }
+                  }
+                }
+                em{
+                  position: absolute;
+                  top: 0;
+                  right: 4px;
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .schedule-month-main{
+    flex: 5;
+    display: flex;
+    padding: 0 40px 20px 40px;
+    .schedule-table{
+      padding-left: 120px;
+      width: 100%;
+      display: flex;
+      position: relative;
+      z-index: 1;
+      .card{
+        display: flex;
+        overflow: hidden;
+        background: #fff !important;
+        border: 1px solid #ecf4f7;
+        .schedule-table-main{
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+          flex: 5;
+          display: flex;
+          .schedule-table-detail{
+            display: flex;
+            table{
+              height: 100%;
+              width: 100%;
+              table-layout: fixed;
+              thead{
+                tr{
+                    vertical-align: middle;
+                }
+              }
+              tr{
+                vertical-align: top;
+                th{
+                  font-weight:normal;
+                  font-size: 12px;
+                  height: 43px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  border-right: 1px solid #dfebf1;
+                  background:#ebf6fb;
+                  &:nth-of-type(even){
+                    background: #deedf4;
+                  }
+                }
+                td:last-child,th:last-child{
+                  border-right: 0;
+                  .table-cell{
+                    &:after{
+                      content: '';
+                      background: #fff;
+                      position: absolute;
+                      right: 0;
+                      top: -1px;
+                      height: 1px;
+                      width: 9px;
+                    }
+                  }
+                }
+                td:first-child{
+                  .table-cell{
+                    &:after{
+                      content: '';
+                      background: #fff;
+                      position: absolute;
+                      left: 0;
+                      top: -1px;
+                      height: 1px;
+                      width: 9px;
+                    }
+                  }
+                }
+                td{
+                  border-right: 1px solid #dfebf1;
+                  border-top: 1px solid #dfebf1;
+                  min-width: 0;
+                  text-align: left;
+                  text-overflow: ellipsis;
+                  position: relative;
+                  font-size: 12px;
+                  .table-day{
+                    text-align: right;
+                    padding: 2px 2px 0 0;
+                    line-height: 1;
+                    min-height: 64px;
+                    &.gray{
+                      opacity: .3;
+                    }
+                  }
+                  .table-cell{
+                    padding: 0 10px 0 5px;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    .day-class-detail{
+                      display: flex;
+                      flex-direction: column;
+                      height: 100%;
+                      padding-bottom: 3px;
+                      .day-class-total{
+                        color: @orange-color;
+                        line-height: 18px;
+                        margin-bottom: 2px;
+                      }
+                      .day-class-list{
+                        width: 100%;
+                        flex: 5;
+                        overflow: hidden;
+                        transition: all .5s;
+                        text-align: center;
+                        &.open{
+                          overflow: visible;
+                          position: relative;
+                          z-index: 1;
+                          ul{
+                            li{
+                              display: block;
+                            }
+                          }
+                        }
+                        ul{
+                          background: #e7f6ef;
+                          border-radius: 3px;
+                          position: relative;
+                          li{
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            word-break: break-all;
+                            box-sizing: border-box;
+                            overflow: hidden;
+                            height: 20px;
+                            line-height: 20px;
+                            font-size: 10px;
+                            padding: 0 6px;
+                            width: 100%;
+                            display: none;
+                            &.show{
+                              display: block;
+                            }
+                            &.openBtn,&.closeBtn{
+                              display: block;
+                              text-align: center;
+                              cursor: pointer;
+                            }
+
+                          }
+                        }
+
+                      }
+                    }
+                  }
+                  &:last-child{
+                    border-right: 0;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+    .schedule-table-hidden{
+      left: -9999px;
+      top: -9999px;
+      z-index: -1;
+      position: absolute;
+      .schedule-table{
+        padding-left: 0;
+        .schedule-table-detail{
+          table{
+            table-layout: auto !important;
+          }
+        }
+        .table-cell{
+          min-height: 64px;
+          min-width: 160px;
+          position: static !important;
+        }
+        .table-day{
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-height: 950px) {
+  .schedule-table-detail td,.schedule-table-detail .ivu-table-cell{
+    height: 53px !important;
+  }
+}

@@ -1,0 +1,93 @@
+.hb-content {
+  width: 100%;
+}
+.hb-content .hbContainer {
+  padding: 0 0 0 40px;
+}
+.hb-content .hbContainer > div {
+  width: 744px;
+  margin: 0 auto;
+}
+.hb-content .hbContainer > div div.remindTips {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.hb-content .hbContainer > div div.remindTips p:first-child {
+  font-size: 16px;
+  color: #323741;
+  margin: 20px 0 10px;
+}
+.hb-content .hbContainer > div div.remindTips p {
+  font-size: 14px;
+}
+.hb-content .hbContainer > div div.mailInfo p:first-child {
+  font-size: 16px;
+  color: #323741;
+  margin: 13px 0 3px;
+}
+.hb-content .hbContainer > div div.mailInfo p {
+  font-size: 14px;
+  line-height: 40px;
+}
+.hb-content .hbContainer > div div.mailInfo p span {
+  margin-right: 3px;
+}
+.hb-content .hbContainer > div div.mailInfo .hasOrder {
+  width: 164px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 16px;
+  display: block;
+  color: #fff;
+  text-align: center;
+  background-color: #dedede ;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.hb-content .ivu-form .ivu-form-item-label {
+  padding: 10px 0;
+  font-size: 14px;
+}
+.hb-content .input1 input {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+.hb-content .input1 input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.hb-content .ivu-form-item {
+  margin-bottom: 16px !important;
+}
+.hb-content .username .ivu-form-item-content,
+.hb-content .mobile .ivu-form-item-content {
+  margin-left: 43px !important;
+}
+.hb-content .province .ivu-form-item-error-tip {
+  left: 87px !important;
+}
+.hb-content .province .ivu-select-single .ivu-select-selection {
+  width: 157px !important;
+}
+.hb-content .city .ivu-select-single .ivu-select-selection {
+  width: 168px !important;
+}
+.hb-content .area .ivu-select-single .ivu-select-selection {
+  width: 234px !important;
+}
+.hb-content .address .ivu-form-item-content {
+  margin-left: 88px !important;
+}
+.hb-content .address .ivu-form-item-content input {
+  width: 634px;
+}
+.hb-content .ivu-btn-primary {
+  width: 164px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 16px;
+  display: block;
+  font-size: 14px;
+}

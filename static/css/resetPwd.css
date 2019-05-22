@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: PingFang SC, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-width: 500px;
+}
+.wrapper {
+  max-width: 100%;
+  display: flex;
+  min-height: 100%;
+  height: 100%;
+  flex-direction: column;
+  font-size: 14px;
+}
+.header {
+  position: relative;
+  background: #5e85c8;
+  -webkit-box-shadow: 0 7px 7px rgba(160, 131, 137, 0.35);
+  box-shadow: 0 7px 7px rgba(160, 131, 137, 0.35);
+  height: 50px;
+  z-index: 5;
+}
+.header .header-logo {
+  background-image: -webkit-gradient(linear, left 0, right 0, from(#623db6), to(#5e85c8));
+  width: 172px;
+  height: 100%;
+}
+.header .header-logo img {
+  width: 113px;
+  margin: 0 auto;
+  display: block;
+}
+.container {
+  flex: 5;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.nav-left {
+  width: 48px;
+  background: #54637f;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 6;
+  height: 100%;
+  box-shadow: 7px 3px 7px rgba(160, 131, 137, 0.35);
+}
+.content {
+  position: relative;
+  flex: 5;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 48px;
+}
+.content .commonTitle {
+  padding: 13px 40px 0 40px;
+}
+.content .commonTitle .commonTitleMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+.content .commonTitle .commonTitleMain h2 {
+  font-size: 18px;
+  color: #fc5c41;
+  font-weight: normal;
+}
+.content .main {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .main .form .item {
+  height: 70px;
+  padding: 22px 0;
+  width: 400px;
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  justify-content: space-between;
+  position: relative;
+}
+.content .main .form .item i {
+  position: absolute;
+  left: 7px;
+  line-height: 26px;
+  top: 22px;
+  font-size: 20px;
+}
+.content .main .form .item button {
+  background: #5e85c8;
+  border-radius: 4px;
+  color: #fff;
+  width: 78px;
+  height: 26px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.content .main .form .item button:hover {
+  background: #7e9dd3;
+}
+.content .main .form .item button:active {
+  background: #4b6aa0;
+}
+.content .main .form .item input {
+  flex: 5;
+  padding-left: 37px;
+  outline: none;
+  border: 0;
+  color: #727a89;
+}
+.content .main .form .item input.icon1 + .icon {
+  color: rgba(94, 133, 200, 0.5);
+}
+.content .main .form .item input.icon2 + .icon {
+  color: #5e85c8;
+}
+.content .main .form .item input.icon3 + .icon {
+  color: rgba(218, 113, 148, 0.9);
+}
+.content .main .form .item .error {
+  color: rgba(218, 113, 148, 0.9);
+  padding-right: 16px;
+  background: url("../images/error.png") no-repeat right center;
+  line-height: 26px;
+  display: none;
+}
+.content .main .form .item em {
+  display: block;
+  width: 25px;
+  margin-left: 5px;
+  cursor: pointer;
+  background: url("../images/eyes1.png") no-repeat center center;
+}
+.content .main .form .item em:hover {
+  background: url("../images/eyes2.png") no-repeat center center;
+}
+.content .main .form .item em.eyes2 {
+  background: url("../images/eyes3.png") no-repeat center center;
+}
+.content .main .form .submit {
+  background: #5e85c8;
+  border-radius: 4px;
+  color: #fff;
+  width: 164px;
+  height: 40px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  display: block;
+  margin: 40px auto;
+}
+.content .main .form .submit:hover {
+  background: #7e9dd3;
+}
+.content .main .form .submit:active {
+  background: #4b6aa0;
+}
+.content .main .form button.wait {
+  background: #d3d3d3 !important;
+  cursor: not-allowed;
+}
+input::-webkit-input-placeholder {
+  color: #a3acbe;
+}
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #a3acbe;
+}
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #a3acbe;
+}
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #a3acbe;
+}
+.errorMsg {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.7s;
+  display: inline-block;
+  pointer-events: all;
+  padding: 8px 16px 8px 34px;
+  color: #727a89;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  background: #fff url("../images/error.png") no-repeat 16px center;
+}
+.succeedMsg .text {
+  padding-left: 62px;
+  background: url("../images/success.png") no-repeat left center;
+  line-height: 28px;
+}
+.succeedMsg .text h2 {
+  font-weight: normal;
+  color: #494949;
+  font-size: 16px;
+}
+.succeedMsg .text p {
+  color: #7d7d7d;
+  font-size: 16px;
+}
+.succeedMsg button {
+  background: #5e85c8;
+  border-radius: 4px;
+  color: #fff;
+  width: 164px;
+  height: 40px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  display: block;
+  margin: 90px auto 0;
+}
+.succeedMsg button:hover {
+  background: #7e9dd3;
+}
+.succeedMsg button:active {
+  background: #4b6aa0;
+}
